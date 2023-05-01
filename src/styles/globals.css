@@ -348,7 +348,6 @@ template {
   display: none;
 }
 
-
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
@@ -368,7 +367,6 @@ template {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
-
 
 .circular-btn {
   border-radius: 30px;
