@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google'
-import { ShopLayout } from '@/components/layouts'
 import { Typography } from '@mui/material'
+import { ShopLayout } from '@/components/layouts'
+import { initialData } from '@/database/products'
+import { ProductList } from '@/components/products/ProductList'
+import { IProduct } from '@/interfaces'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +28,7 @@ export default function Home() {
       >
         Todos los productos
       </Typography>
+      <ProductList products={initialData.products as IProduct[]} />
     </ShopLayout>
   )
 }
