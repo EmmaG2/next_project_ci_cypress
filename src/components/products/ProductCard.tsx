@@ -5,8 +5,11 @@ import {
   CardActionArea,
   CardMedia,
   Grid,
+  Link,
   Typography,
 } from '@mui/material'
+
+import NextLink from 'next/link'
 import { FC, useMemo, useState } from 'react'
 
 interface Props {
@@ -32,15 +35,24 @@ export const ProductCard: FC<Props> = ({ product }) => {
       item
     >
       <Card>
-        <CardActionArea>
-          <CardMedia
-            component='img'
-            className='fadeIn'
-            image={productImage}
-            alt={product.title}
-            onLoad={() => console.log('se cargo')}
-          />
-        </CardActionArea>
+        <NextLink
+          href={'/product/slug'}
+          passHref
+          prefetch={false}
+          legacyBehavior
+        >
+          <Link>
+            <CardActionArea>
+              <CardMedia
+                component='img'
+                className='fadeIn'
+                image={productImage}
+                alt={product.title}
+                onLoad={() => console.log('se cargo')}
+              />
+            </CardActionArea>
+          </Link>
+        </NextLink>
       </Card>
 
       <Box
