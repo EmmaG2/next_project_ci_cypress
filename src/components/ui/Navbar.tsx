@@ -78,7 +78,10 @@ export const Navbar = () => {
           <SearchOutlined />
         </IconButton>
 
-        <NextLink href='/cart'>
+        <NextLink
+          legacyBehavior
+          href='/cart'
+        >
           <Link>
             <IconButton>
               <Badge
