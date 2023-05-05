@@ -9,7 +9,11 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import { SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
+import {
+  MenuOutlined,
+  SearchOutlined,
+  ShoppingCartOutlined,
+} from '@mui/icons-material'
 
 export const Navbar = () => {
   return (
@@ -19,12 +23,17 @@ export const Navbar = () => {
           href={'/'}
           passHref
           legacyBehavior
+          style={{
+            color: '#000',
+          }}
         >
           <Link
             display={'flex'}
             alignItems={'center'}
           >
-            <Typography variant='h6'>Teslo |</Typography>
+            <Typography sx={{ fontSize: '1.12rem', fontWeight: 500 }}>
+              Teslo |
+            </Typography>
             <Typography sx={{ ml: 0.5 }}>Shop</Typography>
           </Link>
         </NextLink>
@@ -94,12 +103,9 @@ export const Navbar = () => {
           </Link>
         </NextLink>
 
-        <Button
-          sx={{ ml: 1 }}
-          color='primary'
-        >
-          Menu
-        </Button>
+        <IconButton>
+          <MenuOutlined />
+        </IconButton>
       </Toolbar>
     </AppBar>
   )

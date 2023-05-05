@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import { Typography } from '@mui/material'
 import { ShopLayout } from '@/components/layouts'
 import { initialData } from '@/database/products'
-import { ProductList } from '@/components/products/ProductList'
+import { ProductList } from '@/components/products'
 import { IProduct } from '@/interfaces'
 
 const inter = Inter({ subsets: ['latin'] })
