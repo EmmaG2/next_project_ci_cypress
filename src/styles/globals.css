@@ -373,7 +373,7 @@ template {
 }
 
 .circular-btn:hover {
-  background-color: #9f2a22;
+  background-color: #9f2a22 !important;
 }
 
 
