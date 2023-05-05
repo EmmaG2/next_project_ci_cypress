@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React, { FC } from 'react'
+import { Navbar, SideMenu } from '../ui'
 
 interface Props {
   children: string | JSX.Element | JSX.Element[]
@@ -37,9 +38,10 @@ export const ShopLayout: FC<Props> = ({
           />
         ) : null}
       </Head>
-      <nav>{/* TODO: Navbar */}</nav>
 
-      {/* TODO: sidebar */}
+      <Navbar />
+
+      <SideMenu />
 
       <main
         style={{
