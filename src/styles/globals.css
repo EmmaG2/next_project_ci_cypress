@@ -370,6 +370,7 @@ template {
 
 .circular-btn {
   border-radius: 30px;
+  width: 100%;
 }
 
 .circular-btn:hover {
