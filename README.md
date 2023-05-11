@@ -1,3 +1,11 @@
+  <p align="center">
+  <a href="https://docs.docker.com/" target="blank"><img src="https://asset.brandfetch.io/idIq_kF0rb/idZxkJkFIi.svg" width="200" alt="Angular Logo" /></a>
+</p>
+
+<p align="center">
+    <a href="https://docs.docker.com/" target="blank"><img src="https://asset.brandfetch.io/id2alue-rx/idAZSWYBPz.svg" width="200" alt="Angular Logo" /></a>
+  </p>
+  
 # Next with CI
 
 Este proyecto es un e-commerce creado de acuerdo al curso de Next.js de Fernando Herrera.
