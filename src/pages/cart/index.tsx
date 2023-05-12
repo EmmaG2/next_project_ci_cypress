@@ -1,4 +1,4 @@
-import { CartList } from '@/components/cart'
+import { CartList, OrderSummary } from '@/components/cart'
 import { ShopLayout } from '@/components/layouts'
 import {
   Box,
@@ -19,6 +19,7 @@ const MainPage = () => {
       <Typography
         variant='h1'
         component='h1'
+        sx={{ mb: 2 }}
       >
         Carrito
       </Typography>
@@ -30,7 +31,7 @@ const MainPage = () => {
           sm={7}
         >
           {/* TODO: Cart List */}
-          <CartList />
+          <CartList editable={false} />
         </Grid>
 
         <Grid
@@ -43,7 +44,7 @@ const MainPage = () => {
               <Typography variant='h2'>Orden</Typography>
               <Divider sx={{ my: 1 }} />
 
-              {/* TODO: OrdenSummary */}
+              <OrderSummary />
 
               <Box sx={{ mt: 3 }}>
                 <Button
