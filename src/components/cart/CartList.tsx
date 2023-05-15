@@ -71,7 +71,7 @@ export const CartList: FC<Props> = ({ editable = false }) => {
               </Typography>
 
               {/* Esto deberia ser condicional */}
-
+              
               {editable ? (
                 <ItemCounter />
               ) : (
