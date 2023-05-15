@@ -1,4 +1,5 @@
 import { IProduct } from '@/interfaces'
+import { CurrencyFormatter } from '@/utilities'
 import {
   Box,
   Card,
@@ -25,6 +26,8 @@ export const ProductCard: FC<Props> = ({ product }) => {
       : `products/${product.images[0]}`
   }, [isHovered, product.images])
 
+  const formatter: CurrencyFormatter = new CurrencyFormatter({})
+
   return (
     <Grid
       onMouseEnter={() => setIsHovered(true)}
@@ -48,7 +51,6 @@ export const ProductCard: FC<Props> = ({ product }) => {
                 className='fadeIn'
                 image={productImage}
                 alt={product.title}
-                onLoad={() => console.log('se cargo')}
               />
             </CardActionArea>
           </Link>
@@ -60,7 +62,9 @@ export const ProductCard: FC<Props> = ({ product }) => {
         className='fadeIn'
       >
         <Typography fontWeight={700}>{product.title}</Typography>
-        <Typography fontWeight={500}>${product.price}.00</Typography>
+        <Typography fontWeight={500}>
+          {formatter.formatCurrency(product.price)}
+        </Typography>
       </Box>
     </Grid>
   )

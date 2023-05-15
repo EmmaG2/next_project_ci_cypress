@@ -1,6 +1,13 @@
 import { Grid, Typography } from '@mui/material'
 
+import { CurrencyFormatter } from '@/utilities'
+
 export const OrderSummary = () => {
+  const formatter: CurrencyFormatter = new CurrencyFormatter({
+    currency: 'MXN',
+    region: 'es-MX',
+  })
+
   return (
     <Grid
       container
@@ -38,7 +45,7 @@ export const OrderSummary = () => {
         justifyContent={'end'}
       >
         <Typography sx={{ color: 'primary.main' }}>
-          <strong>$165.32</strong>
+          <strong>{formatter.formatCurrency(165.34)}</strong>
         </Typography>
       </Grid>
 
@@ -56,7 +63,7 @@ export const OrderSummary = () => {
         justifyContent={'end'}
       >
         <Typography sx={{ color: 'secondary.main' }}>
-          <strong>$0.00</strong>
+          <strong>{formatter.formatCurrency(0)}</strong>
         </Typography>
       </Grid>
 
@@ -74,7 +81,7 @@ export const OrderSummary = () => {
         justifyContent={'end'}
       >
         <Typography sx={{ color: 'primary.main' }}>
-          <strong>$32.32</strong>
+          <strong>{formatter.formatCurrency(32)}</strong>
         </Typography>
       </Grid>
 
@@ -94,7 +101,7 @@ export const OrderSummary = () => {
         justifyContent={'end'}
       >
         <Typography sx={{ color: 'secondary.main', mt: 1 }}>
-          <strong>${165.32 + 32.32}</strong>
+          <strong>{formatter.formatCurrency(165.32 + 32.32)}</strong>
         </Typography>
       </Grid>
     </Grid>

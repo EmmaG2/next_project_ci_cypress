@@ -11,6 +11,7 @@ import {
 import NextLink from 'next/link'
 import { ItemCounter } from '../ui'
 import { FC } from 'react'
+import { CurrencyFormatter } from '@/utilities'
 
 const productsInCart = [
   initialData.products[0],
@@ -19,10 +20,12 @@ const productsInCart = [
 ]
 
 interface Props {
-  editable: boolean
+  editable?: boolean
 }
 
-export const CartList: FC<Props> = ({ editable }) => {
+export const CartList: FC<Props> = ({ editable = false }) => {
+  const formatter: CurrencyFormatter = new CurrencyFormatter({})
+
   return (
     <>
       {productsInCart.map((product, i) => (
@@ -46,7 +49,7 @@ export const CartList: FC<Props> = ({ editable }) => {
                 <CardActionArea>
                   <CardMedia
                     component='img'
-                    image={`products/${product.images[0]}`}
+                    image={`/products/${product.images[0]}`}
                     sx={{ borderRadius: '5px' }}
                   />
                 </CardActionArea>
@@ -68,8 +71,12 @@ export const CartList: FC<Props> = ({ editable }) => {
               </Typography>
 
               {/* Esto deberia ser condicional */}
-
-              {editable ? <ItemCounter /> : null}
+              
+              {editable ? (
+                <ItemCounter />
+              ) : (
+                <Typography variant='h4'>3 items</Typography>
+              )}
             </Box>
           </Grid>
 
@@ -80,7 +87,9 @@ export const CartList: FC<Props> = ({ editable }) => {
             alignItems='center'
             flexDirection='column'
           >
-            <Typography variant='subtitle2'>${product.price}.00</Typography>
+            <Typography variant='subtitle2'>
+              {formatter.formatCurrency(product.price)}
+            </Typography>
             {editable ? (
               <Button
                 variant='text'

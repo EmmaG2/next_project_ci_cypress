@@ -10,18 +10,18 @@ import {
   Typography,
 } from '@mui/material'
 
-const MainPage = () => {
+const SummaryPage = () => {
   return (
     <ShopLayout
-      title='Carrito - 2'
-      pageDescription='Carrito de compras de la tienda.'
+      title='Resumen de orden'
+      pageDescription='Resumen de la orden'
     >
       <Typography
         variant='h1'
         component='h1'
         sx={{ mb: 2 }}
       >
-        Carrito
+        Resumen de la orden
       </Typography>
 
       <Grid container>
@@ -30,7 +30,7 @@ const MainPage = () => {
           xs={12}
           sm={7}
         >
-          <CartList editable />
+          <CartList editable={true} />
         </Grid>
 
         <Grid
@@ -61,4 +61,4 @@ const MainPage = () => {
   )
 }
 
-export default MainPage
+export default SummaryPage
