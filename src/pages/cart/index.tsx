@@ -30,8 +30,7 @@ const MainPage = () => {
           xs={12}
           sm={7}
         >
-          {/* TODO: Cart List */}
-          <CartList editable={false} />
+          <CartList editable />
         </Grid>
 
         <Grid
