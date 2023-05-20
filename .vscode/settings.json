@@ -1,3 +1,7 @@
 {
-  "conventionalCommits.scopes": ["development", "shop-ui"]
+  "conventionalCommits.scopes": [
+    "development",
+    "shop-ui",
+    "next-config"
+  ]
 }
